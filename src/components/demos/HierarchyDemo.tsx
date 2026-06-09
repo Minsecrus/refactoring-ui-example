@@ -17,7 +17,7 @@ export default function HierarchyDemo({ improved }: { improved: boolean }) {
         <div className="space-y-3 p-5">
           {details.map(({ label, value }) => (
             <p key={label} className="text-sm font-semibold text-slate-700">
-              {label}: {value}
+              {label}：{value}
             </p>
           ))}
         </div>

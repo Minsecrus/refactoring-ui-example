@@ -9,8 +9,8 @@ const scale = [
 ];
 
 const articleParagraphs = [
-  "阅读长文本时,过长的行宽会让眼睛在换行时难以找到下一行的起点,而过短的行宽则会频繁打断阅读节奏。理想的行宽大约是每行 45–75 个字符(中文约二三十个字)。",
-  "行高也不是固定值:字号越小、行宽越长,需要的行高越大;大标题则应使用更紧凑的行高。长段落务必左对齐,居中只适合短句标题。",
+  "阅读长文本时，过长的行宽会让眼睛在换行时难以找到下一行的起点，而过短的行宽则会频繁打断阅读节奏。理想的行宽大约是每行 45–75 个字符（中文约二三十个字）。",
+  "行高也不是固定值：字号越小、行宽越长，需要的行高越大；大标题则应使用更紧凑的行高。长段落务必左对齐，居中只适合短句标题。",
 ];
 
 export default function TypographySection({ improved }: { improved: boolean }) {
@@ -38,8 +38,8 @@ export default function TypographySection({ improved }: { improved: boolean }) {
           ))}
         </div>
         <p className="mt-6 border-t border-slate-100 pt-4 text-xs leading-relaxed text-slate-400">
-          提前定义一套有限的字号阶梯,设计时只从中挑选,避免出现 17px、19px
-          这类"凭感觉"的尺寸。
+          提前定义一套有限的字号阶梯，设计时只从中挑选，避免出现 17px、19px
+          这类「凭感觉」的尺寸。
         </p>
       </div>
 

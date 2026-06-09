@@ -2,7 +2,7 @@ const palettes: { name: string; note: string; colors: { shade: string; cls: stri
   [
     {
       name: "灰色 Slate",
-      note: "界面的骨架:文字、背景、边框,用量最大",
+      note: "界面的骨架：文字、背景、边框，用量最大",
       colors: [
         { shade: "50", cls: "bg-slate-50" },
         { shade: "100", cls: "bg-slate-100" },
@@ -18,7 +18,7 @@ const palettes: { name: string; note: string; colors: { shade: string; cls: stri
     },
     {
       name: "主色 Indigo",
-      note: "品牌色:主按钮、链接、强调元素",
+      note: "品牌色：主按钮、链接、强调元素",
       colors: [
         { shade: "50", cls: "bg-indigo-50" },
         { shade: "100", cls: "bg-indigo-100" },
@@ -34,7 +34,7 @@ const palettes: { name: string; note: string; colors: { shade: string; cls: stri
     },
     {
       name: "成功 Green",
-      note: "积极状态:成功提示、增长趋势",
+      note: "积极状态：成功提示、增长趋势",
       colors: [
         { shade: "50", cls: "bg-emerald-50" },
         { shade: "100", cls: "bg-emerald-100" },
@@ -50,7 +50,7 @@ const palettes: { name: string; note: string; colors: { shade: string; cls: stri
     },
     {
       name: "危险 Red",
-      note: "警示状态:错误、删除等破坏性操作",
+      note: "警示状态：错误、删除等破坏性操作",
       colors: [
         { shade: "50", cls: "bg-red-50" },
         { shade: "100", cls: "bg-red-100" },

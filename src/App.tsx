@@ -1,4 +1,5 @@
 import { useState } from "react";
+import InfoDialog from "./components/InfoDialog";
 import ColorPrinciplesSection from "./components/sections/ColorPrinciplesSection";
 import DepthPrinciplesSection from "./components/sections/DepthPrinciplesSection";
 import FinishPrinciplesSection from "./components/sections/FinishPrinciplesSection";
@@ -28,6 +29,7 @@ const sectionById = {
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<PrincipleId>("hierarchy");
+  const [infoOpen, setInfoOpen] = useState(false);
   const ActiveSection = sectionById[activeTab];
 
   const selectTab = (id: PrincipleId, scroll = true) => {
@@ -56,21 +58,42 @@ export default function App() {
               </span>
             </span>
           </a>
-          <nav className="hidden items-center gap-6 md:flex">
-            {navItems.map((n) => (
+          <div className="flex items-center gap-5">
+            <nav className="hidden items-center gap-6 lg:flex">
+              {navItems.map((n) => (
+                <button
+                  key={n.id}
+                  onClick={() => selectTab(n.id)}
+                  className={`text-sm font-medium transition ${
+                    activeTab === n.id
+                      ? "text-indigo-600"
+                      : "text-slate-500 hover:text-indigo-600"
+                  }`}
+                >
+                  {n.label}
+                </button>
+              ))}
+            </nav>
+            <div className="group relative pl-1">
               <button
-                key={n.id}
-                onClick={() => selectTab(n.id)}
-                className={`text-sm font-medium transition ${
-                  activeTab === n.id
-                    ? "text-indigo-600"
-                    : "text-slate-500 hover:text-indigo-600"
-                }`}
+                type="button"
+                onClick={() => setInfoOpen(true)}
+                aria-label="查看项目信息"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-slate-500 shadow-sm ring-1 ring-slate-200 transition hover:text-indigo-600 hover:ring-indigo-200"
               >
-                {n.label}
+                <svg className="h-4.5 w-4.5" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    fillRule="evenodd"
+                    d="M18 10A8 8 0 1 1 2 10a8 8 0 0 1 16 0ZM9.25 8.75A.75.75 0 0 1 10 8h.01a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0v-4.5ZM10 6.75A.875.875 0 1 0 10 5a.875.875 0 0 0 0 1.75Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
               </button>
-            ))}
-          </nav>
+              <span className="pointer-events-none absolute right-0 top-11 hidden whitespace-nowrap rounded-lg bg-slate-900 px-2.5 py-1 text-xs font-medium text-white shadow-lg group-hover:block group-focus-within:block">
+                关于项目
+              </span>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -82,15 +105,15 @@ export default function App() {
             ✨ 灵感来自 Adam Wathan & Steve Schoger 的《Refactoring UI》
           </span>
           <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-6xl">
-            设计无需天赋,
+            设计无需天赋，
             <br />
             <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
               只需正确的方法
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-500">
-            6 个核心设计原则,每个都配有可交互的「优化前 / 优化后」对比示例。
-            切换开关,亲眼看看小小的改动如何让界面焕然一新。
+            6 个核心设计原则，每个都配有可交互的「优化前 / 优化后」对比示例。
+            切换开关，亲眼看看小小的改动如何让界面焕然一新。
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <button
@@ -162,13 +185,13 @@ export default function App() {
               好设计 = 有限的选择 + 刻意的层级
             </h2>
             <p className="mt-4 leading-relaxed text-slate-400">
-              提前定义好字号、间距、颜色、阴影的「调色板」,设计时只做选择题;
-              再不断追问「什么最重要」,强调它、弱化其余。剩下的,就是不断地打磨细节。
+              提前定义好字号、间距、颜色、阴影的「调色板」，设计时只做选择题；
+              再不断追问「什么最重要」，强调它、弱化其余。剩下的，就是不断地打磨细节。
             </p>
           </div>
           <div className="mx-auto mt-10 flex max-w-3xl flex-wrap justify-center gap-2">
             {[
-              "从功能开始,而非布局",
+              "从功能开始，而非布局",
               "先做灰阶稿",
               "省略不必要的边框",
               "用饱和的灰色注入个性",
@@ -185,7 +208,7 @@ export default function App() {
           </div>
           <div className="mt-14 border-t border-slate-800 pt-8 text-center text-xs leading-relaxed text-slate-500">
             <p>
-              本站为学习目的制作的非官方示例,核心理念来自
+              本站为学习目的制作的非官方示例，核心理念来自
               <a
                 href="https://www.refactoringui.com/"
                 target="_blank"
@@ -194,12 +217,13 @@ export default function App() {
               >
                 《Refactoring UI》
               </a>
-              (Adam Wathan & Steve Schoger 著)。
+              （Adam Wathan & Steve Schoger 著）。
             </p>
             <p className="mt-2">用 React + Tailwind CSS 构建 — 本站本身也在实践这些原则。</p>
           </div>
         </div>
       </footer>
+      <InfoDialog open={infoOpen} onClose={() => setInfoOpen(false)} />
     </div>
   );
 }

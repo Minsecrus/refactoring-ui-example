@@ -28,8 +28,8 @@ export default function DepthSection({ improved }: { improved: boolean }) {
           ))}
         </div>
         <p className="mt-6 border-t border-slate-200 pt-4 text-xs leading-relaxed text-slate-400">
-          元素离用户越"近",阴影越大越柔和。像字号阶梯一样,提前定义 5
-          档阴影,用层级表达远近,而不是随手调数值。
+          元素离用户越「近」，阴影越大越柔和。像字号阶梯一样，提前定义 5
+          档阴影，用层级表达远近，而不是随手调数值。
         </p>
       </div>
 

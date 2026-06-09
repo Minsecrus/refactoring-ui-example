@@ -3,7 +3,7 @@ const messages = [
     initial: "陈",
     color: "bg-rose-100 text-rose-600",
     name: "陈雨菲",
-    text: "新版首页的设计稿已经更新,麻烦看一下交互细节~",
+    text: "新版首页的设计稿已经更新，麻烦看一下交互细节~",
     time: "刚刚",
     unread: true,
   },
@@ -19,7 +19,7 @@ const messages = [
     initial: "张",
     color: "bg-sky-100 text-sky-600",
     name: "张梦洁",
-    text: "配色方案我觉得第二版更好,层级更清晰",
+    text: "配色方案我觉得第二版更好，层级更清晰",
     time: "2 小时前",
     unread: false,
   },
@@ -92,7 +92,7 @@ export default function FinishDemo({ improved }: { improved: boolean }) {
       <div className="flex flex-col items-center gap-1 border-t border-slate-50 px-6 py-6 text-center">
         {improved && <span className="text-2xl">🎉</span>}
         <p className="text-sm font-medium text-slate-700">全部处理完啦</p>
-        <p className="text-xs text-slate-400">空状态也是设计的机会,而不是一句冷冰冰的提示</p>
+        <p className="text-xs text-slate-400">空状态也是设计的机会，而不是一句冷冰冰的提示</p>
       </div>
     </div>
   );
